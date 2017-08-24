@@ -1,1 +1,1 @@
-include ':master_app', ':sub_app'
+include ':master_app', ':sub_app', ':shareduserid_app'

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.os.operando.application.interoperability.sample"
+    package="com.example.shareduserid_app"
     android:sharedUserId="app.shareduserid">
 
     <application
