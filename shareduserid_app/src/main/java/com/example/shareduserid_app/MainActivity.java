@@ -2,8 +2,8 @@ package com.example.shareduserid_app;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 

@@ -3,6 +3,14 @@
     package="com.os.operando.application.interoperability.sample"
     android:sharedUserId="app.shareduserid">
 
+    <permission
+        android:name="master.app.READ_DATA"
+        android:protectionLevel="signature" />
+
+    <permission
+        android:name="master.app.OPEN"
+        android:protectionLevel="signature" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,6 +25,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <provider
+            android:name=".SampleContentProvider"
+            android:authorities="master"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".SettingActivity"
+            android:label="@string/title_activity_setting"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity-alias
+            android:name="com.os.operando.application.interoperability.sample.SettingAliasActivity"
+            android:exported="true"
+            android:permission="master.app.OPEN"
+            android:targetActivity=".SettingActivity" />
+    </application>
 </manifest>
