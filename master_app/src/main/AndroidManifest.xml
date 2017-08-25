@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.os.operando.application.interoperability.sample"
     android:sharedUserId="app.shareduserid">
 
     <permission
         android:name="master.app.READ_DATA"
         android:protectionLevel="signature" />
-
     <permission
         android:name="master.app.OPEN"
         android:protectionLevel="signature" />
@@ -38,9 +38,21 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity-alias
-            android:name="com.os.operando.application.interoperability.sample.SettingAliasActivity"
+            android:name=".SettingAliasActivity"
             android:exported="true"
             android:permission="master.app.OPEN"
             android:targetActivity=".SettingActivity" />
+
+        <activity android:name=".SampleActivity">
+            <intent-filter>
+                <data
+                    android:host="sample"
+                    android:scheme="https" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

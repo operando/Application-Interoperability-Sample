@@ -1,11 +1,11 @@
 package sample.interoperability.application.operando.os.com.subapp;
 
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.support.v7.app.AppCompatActivity;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,8 +17,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent i = new Intent();
-        i.setComponent(new ComponentName("com.os.operando.application.interoperability.sample", "com.os.operando.application.interoperability.sample.SettingAliasActivity"));
+//        Intent i = new Intent();
+//        i.setComponent(new ComponentName("com.os.operando.application.interoperability.sample", "com.os.operando.application.interoperability.sample.SettingAliasActivity"));
+//        startActivity(i);
+
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://sample"));
+        i.setPackage("com.os.operando.application.interoperability.sample");
         startActivity(i);
 
         try {
